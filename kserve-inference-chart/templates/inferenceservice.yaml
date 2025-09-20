@@ -6,7 +6,7 @@ metadata:
 spec:
   predictor:
     serviceAccountName: {{ .Values.model.name }}-sa
-    minReplicas: {{ .Values.model.minReplicas | default 1 }}
+    minReplicas: {{ .Values.model.minReplicas }}
     model:
       args: ["--enable_docs_url=True"]
       modelFormat:
