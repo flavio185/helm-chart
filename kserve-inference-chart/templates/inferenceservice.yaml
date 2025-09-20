@@ -1,0 +1,21 @@
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: {{ .Values.model.name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  predictor:
+    serviceAccountName: {{ .Values.model.name }}-sa
+    minReplicas: {{ .Values.model.minReplicas | default 1 }}
+    model:
+      args: ["--enable_docs_url=True"]
+      modelFormat:
+        name: sklearn
+      storageUri: {{ .Values.model.storageUri }}
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "512Mi"
+        limits:
+          cpu: "1"
+          memory: "1Gi"

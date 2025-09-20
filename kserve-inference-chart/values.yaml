@@ -1,0 +1,4 @@
+model:
+  name: "sklearn-iris"
+  storageUri: "gs://kfserving-examples/models/sklearn/1.0/model"
+  minReplicas: 0
