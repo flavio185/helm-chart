@@ -8,10 +8,9 @@ spec:
     serviceAccountName: {{ .Values.model.name }}-sa
     minReplicas: {{ .Values.model.minReplicas }}
     model:
-      args: ["--enable_docs_url=True"]
       modelFormat:
         name: sklearn
-      storageUri: {{ .Values.model.storageUri }}
+      storageUri: s3://mlflow-bucket/{{ .Values.model.storageUri }}
       resources:
         requests:
           cpu: "100m"

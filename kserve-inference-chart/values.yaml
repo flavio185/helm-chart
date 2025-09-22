@@ -1,4 +1,5 @@
 model:
-  name: "sklearn-iris"
-  storageUri: "gs://kfserving-examples/models/sklearn/1.0/model"
+  name: ml-default-payment-model
+  storageUri: "2/models/m-22b9307587e345ffaa236577775795e2/artifacts"
   minReplicas: 0
+  
